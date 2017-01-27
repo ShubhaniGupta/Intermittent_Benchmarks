@@ -1,11 +1,12 @@
 # Intermittent_Benchmarks
 
-Steps to follow:
-1. Install an MSP430 compiler toolchain such as mspgcc or gcc 4.9 (which includes an MSP430 backend in later releases).  If you are using mspgcc, ensure that `msp430-gcc` is in your `$PATH`.
+__Steps to follow__:
+
+1.  Install an MSP430 compiler toolchain such as mspgcc or gcc 4.9 (which includes an MSP430 backend in later releases).  If you are using mspgcc, ensure that `msp430-gcc` is in your `$PATH`.
 ```sh   
 sudo apt-get install gcc-msp430
 ```
-2. Build and install llvm 3.5.0 [LLVM](http://llvm.org/) and
+2.  Build and install llvm 3.5.0 [LLVM](http://llvm.org/) and
 [Clang](http://clang.llvm.org/) using the [CMake-style
 build](http://llvm.org/docs/CMake.html).  The rest of these instructions assume
 you have chosen to put your LLVM installation in `/opt/llvm`.
@@ -38,7 +39,7 @@ $ cmake -DCMAKE_INSTALL_PREFIX=/opt/llvm -P cmake_install.cmake
 $ cmake --build . --target install
 
 ```
-3. Clone this repository.
+__Clone this repository__
 ```sh
 $ git clone https://github.com/ShubhaniGupta/Intermittent_Benchmarks.git dino
 ```
@@ -101,5 +102,5 @@ $ make
 ```
 
 # Generating elf files for Benchmarks
-Go to directories of various benchmarks in Experiments directory and run make to generate the elf files.
+Go to directories of various benchmarks in 'Experiments' directory and run 'make' to generate the elf files.
 
