@@ -1,0 +1,40 @@
+# Intermittent_Benchmarks
+
+Steps to follow:
+1. Intall gcc extension for msp430 devices
+```sh   
+sudo apt-get install gcc-msp430
+```
+2. Build and install llvm 3.5.0 [LLVM](http://llvm.org/) and
+[Clang](http://clang.llvm.org/) using the [CMake-style
+build](http://llvm.org/docs/CMake.html).  The rest of these instructions assume
+you have chosen to put your LLVM installation in `/opt/llvm`.
+
+```sh
+# download LLVM, Clang, compiler-rt 3.5.0.src as mentioned below:
+Checkout LLVM:
+$ cd where-you-want-llvm-to-live
+$ svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm
+
+Checkout Clang:
+$ cd where-you-want-llvm-to-live
+$ cd llvm/tools
+$ svn co http://llvm.org/svn/llvm-project/cfe/trunk clang
+
+Checkout Compiler-RT (required to build the sanitizers) [Optional]:
+
+$ cd where-you-want-llvm-to-live
+$ cd llvm/projects
+$ svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt
+
+# build instructions
+
+$ cd where you want to build llvm
+$ mkdir build && cd build
+$ cmake -DLLVM_TARGETS_TO_BUILD="X86;MSP430" -DCMAKE_BUILD_TYPE=Debug \
+        -DCMAKE_INSTALL_PREFIX=/opt/llvm  where-you-want-llvm-to-live/llvm
+$ cmake --build .
+$ cmake -DCMAKE_INSTALL_PREFIX=/opt/llvm -P cmake_install.cmake
+$ cmake --build . --target install
+
+```
