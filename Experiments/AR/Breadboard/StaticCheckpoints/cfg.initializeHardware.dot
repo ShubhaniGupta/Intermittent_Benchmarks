@@ -1,0 +1,5 @@
+digraph "CFG for 'initializeHardware' function" {
+	label="CFG for 'initializeHardware' function";
+
+	Node0x8ab790 [shape=record,label="{%0:\l  %1 = load volatile i8* @\"\\01__PADIR_L\", align 1, !dbg !55\l  %2 = zext i8 %1 to i16, !dbg !55\l  %3 = or i16 %2, 1, !dbg !55\l  %4 = trunc i16 %3 to i8, !dbg !55\l  store volatile i8 %4, i8* @\"\\01__PADIR_L\", align 1, !dbg !55\l  call void bitcast (void (...)* @ACCEL_setup to void ()*)(), !dbg !56\l  call void @ACCEL_SetReg(i8 zeroext 45, i8 zeroext 2), !dbg !57\l  ret void, !dbg !58\l}"];
+}

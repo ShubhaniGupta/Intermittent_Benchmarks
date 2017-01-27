@@ -1,0 +1,5 @@
+digraph "CFG for '__dino_recover' function" {
+	label="CFG for '__dino_recover' function";
+
+	Node0x86ff20 [shape=record,label="{%0:\l  %1 = alloca i16, align 2\l  %2 = alloca i8*, align 2\l  store i16 %x, i16* %1, align 2\l  call void @llvm.dbg.declare(metadata !\{i16* %1\}, metadata !55), !dbg !56\l  store i8* %p, i8** %2, align 2\l  call void @llvm.dbg.declare(metadata !\{i8** %2\}, metadata !57), !dbg !58\l  ret void, !dbg !59\l}"];
+}
